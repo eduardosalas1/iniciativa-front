@@ -5,7 +5,6 @@ import { IniciativaState } from "@/types/iniciativa";
 import Sidebar from "@/components/SideBar/SideBar";
 import Chat from "@/components/Chat/Chat";
 
-
 export default function Page() {
   const [state, setState] = useState<IniciativaState | null>(null);
 
@@ -27,7 +26,7 @@ export default function Page() {
 
   return (
     <div className="flex h-screen">
-      <Sidebar state={state} onReset={handleReset} />
+      <Sidebar state={state} onReset={handleReset} setState={setState} />
       <div className="flex-1 flex flex-col">
         <Chat state={state} setState={setState} />
       </div>

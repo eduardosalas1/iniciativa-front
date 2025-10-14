@@ -1,8 +1,7 @@
-
-
+import { httpApi } from "@/api/api";
 
 export async function sendPrompt(prompt: string, state: any) {
-  const res = await fetch("http://localhost:8000/chat/", {
+  const res = await fetch(`${httpApi}/chat/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ prompt, state }),
